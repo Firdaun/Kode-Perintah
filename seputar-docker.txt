@@ -17,6 +17,11 @@ ngecek volume                    : docker volume ls
 buat volume                      : docker volume create mongovolume
 hapus volume                     : docker volume rm mongovolume
 container volume                 : docker container create --name mongovolume --publish 27018:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+pindahkan file ke windows        : docker container cp redis-kustom:/data/dump.rdb .
+pindahkan file ke container      : docker container cp dump.rdb redis-kustom:/data/dump.rdb
+membuat container(tanpa config)  : docker container create --publish 6379:6379 --mount "type=volume,source=brankas-redis,destination=/data" --name redis-kustom redis
+menghapus container yg menyala   : docker container rm -f redis-kustom
+membuat container(dengan config) : docker container create --name redis-kustom --publish 6379:6379 --mount "type=volume,source=brankas-redis,destination=/data" --mount "type=bind,source=C:\Users\Fahrul10\Desktop\redis-config,destination=/config" redis redis-server /config/redis.conf
 
 // ===== Docker : Menghapus Semua (Prune) ===== //
 container                        : docker container prune
