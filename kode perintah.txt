@@ -85,7 +85,8 @@ ngecek volume : docker volume ls
 buat volume : docker volume create mongovolume
 hapus volume : docker volume rm mongovolume
 container volume : docker container create --name mongovolume --publish 27018:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
-// ===== menghapus semua ===== //
+
+// ===== Docker : menghapus semua ===== //
 container : docker container prune
 image : docker image prune
 network : docker network prune
