@@ -10,6 +10,7 @@ alias tree working               : git config --global alias.graph "log --all --
 apakah alias sudah tersimpan     : git config --global --get alias.graph
 untuk balik ke commit sebelumnya : git revert <commit-hash> -m "Revert karena bug"
 check koneksi remote github      : git remote -v
+menghilangkan peringatan         : git config --global core.safecrlf false
 
 alias ssh                        : ⬇
 ----------------------------------------
