@@ -85,7 +85,6 @@ ngecek volume : docker volume ls
 buat volume : docker volume create mongovolume
 hapus volume : docker volume rm mongovolume
 container volume : docker container create --name mongovolume --publish 27018:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
-redis pipeline : docker container exec -i namaContainerRedis redis-cli -n 0 --pipe < path/ke/file/disini.txt
 
 // ===== Docker : menghapus semua ===== //
 container : docker container prune
@@ -97,3 +96,11 @@ hapus container, network, image : docker system prune
 // ===== Mendownload app ms store tanpa ms store ===== //
 perintah pertama : Invoke-WebRequest "URL" -OutFile "WhatsAppDesktop.appx"
 perintah kedua : Add-AppxPackage .\WhatsAppDesktop.appx
+
+// ===== seputar redis ===== //
+redis pipeline : docker container exec -i namaContainerRedis redis-cli -n 0 --pipe < path/ke/file/disini.txt
+
+// ===== Redis queue ===== //
+tahap pertama : multi
+tahap kedua : set namaKeys "isiPesan"
+tahap ketiga : exec
