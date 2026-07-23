@@ -1,0 +1,12 @@
+// ===== Seputar NPM & Testing ===== //
+
+hapus dependency                 : npm uinstall...
+ngetest per it                   : npm test -- -t "..."
+untuk ngetest                    : npm test -- -t "..."
+
+// ===== Kode Unit Test ===== //
+it spesifik                      : npm run tests tests/users/register.test.js -- -t "..."
+run semua file (tanpa parallel)  : npm run tests -- tests/ --runInBand
+
+// ===== Menjalankan Server di Mode Test ===== //
+NODE_ENV=test node src/main.js

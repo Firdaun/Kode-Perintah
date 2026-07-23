@@ -1,0 +1,26 @@
+// ===== Seputar Docker ===== //
+
+membuat container(forward port)  : docker container create --name namabebas --publish 8080:80 redis:latest
+membuat container                : docker container create --name contohredis2 redis:latest
+hapus container                  : docker container rm contohredis
+start container                  : docker container start contohredis
+stop container                   : docker container stop contohredis
+list semua container             : docker container ls -a
+list container(hanya yg aktif)   : docker container ls
+menambahkan env                  : docker container create --name contohmongo --publish 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+mengatur resource                : docker container create --name smallnginx --memory 100m --cpus 0.5 --publish 8081:80 nginx:lates
+masuk ke container               : docker container exec -i -t contohredis /bin/bash
+masuk langsung ke redis-cli      : docker container exec -it redis-kustom redis-cli
+masuk ke redis cli               : redis-cli --> get fahrul
+bind mounts docker               : docker container create --name mongodata --publish 27017:27017 --mount "type=bind,source=C:\Users\Fahrul10\Desktop\mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+ngecek volume                    : docker volume ls
+buat volume                      : docker volume create mongovolume
+hapus volume                     : docker volume rm mongovolume
+container volume                 : docker container create --name mongovolume --publish 27018:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+
+// ===== Docker : Menghapus Semua (Prune) ===== //
+container                        : docker container prune
+image                            : docker image prune
+network                          : docker network prune
+volume                           : docker volume prune
+hapus container, network, image  : docker system prune

@@ -1,0 +1,40 @@
+// ===== Seputar Git & SSH ===== //
+
+buat akun di git lokal           : git config --local user.name "..."
+perintah cek koneksi             : "ssh -T git@github.com" / -utama / -kedua
+cek ada/tidak ssh                : "ls ~/.ssh"
+Buat ssh                         : ssh-keygen -t ed25519 -C "fahrulmuhammad764@gmail.com" -f ~/.ssh/id_ed25519_utama
+mode config                      : nano ~/.ssh/config
+list config local                : git config --list --local
+alias tree working               : git config --global alias.graph "log --all --decorate --oneline --graph --color --pretty=format:'%C(auto)%h %d %s %C(blue)%an %C(black)%C(bold)%cr'"
+apakah alias sudah tersimpan     : git config --global --get alias.graph
+untuk balik ke commit sebelumnya : git revert <commit-hash> -m "Revert karena bug"
+check koneksi remote github      : git remote -v
+
+alias ssh                        : ⬇
+----------------------------------------
+# Akun Utama
+Host github.com-utama
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_ed25519_utama
+----------------------------------------
+
+password ssh utama               : 5394
+password ssh kedua               : 4935
+
+// ===== Workflow Git ===== //
+balik ke commit sebelumnya       : git revert
+hapus tracking file              : git rm --cached path/to/file
+reset soft                       : git reset --soft HEAD~...
+simpan perubahan tanpa commit    : git stash
+cek isi stash                    : git stash list
+un-stash project                 : git stash pop
+un-stash tanpa hapus stashnya    : git stash apply
+menghapus stash                  : git stash drop
+melihat isi stash                : git stash show -p
+rename commit dengan waktu tetap : git rebase -i --committer-date-is-author-date HEAD~angka
+push dengan perubahan rebase     : git push --force-with-lease
+
+// ===== Commit di waktu sebelumnya ===== //
+GIT_AUTHOR_DATE="2026-07-04 17:00:00 +0700" GIT_COMMITTER_DATE="2026-07-04 17:00:00 +0700" git commit -am "Pesan"
