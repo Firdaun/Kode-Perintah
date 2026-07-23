@@ -37,4 +37,4 @@ rename commit dengan waktu tetap : git rebase -i --committer-date-is-author-date
 push dengan perubahan rebase     : git push --force-with-lease
 
 // ===== Commit di waktu sebelumnya ===== //
-GIT_AUTHOR_DATE="2026-07-04 17:00:00 +0700" GIT_COMMITTER_DATE="2026-07-04 17:00:00 +0700" git commit -am "Pesan"
+GIT_AUTHOR_DATE="2026-07-25 15:00:00 +0700" GIT_COMMITTER_DATE="2026-07-25 15:00:00 +0700" git commit -am "Pesan"
