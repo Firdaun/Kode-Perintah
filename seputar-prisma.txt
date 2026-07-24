@@ -1,0 +1,15 @@
+// ===== Seputar Prisma ===== //
+
+step by step untuk menginstall prisma :
+1. npm install prisma @types/node --save-dev
+2. npm install @prisma/client @prisma/adapter-mariadb dotenv   <-- untuk mysql
+2. npm install @prisma/client @prisma/adapter-pg pg dotenv     <-- untuk PostgreSQL
+3. npx prisma init --datasource-provider mysql --output ../generated/prisma
+3. npx prisma init --datasource-provider postgresql --output ../generated/prisma
+4. ubah provider di generator client jadi "prisma-client-js"
+
+----------------------------------------
+untuk menghubungkan prisma ke database :
+di local                         : npx prisma migrate dev --name init
+di production                    : npx prisma migrate deploy
+----------------------------------------

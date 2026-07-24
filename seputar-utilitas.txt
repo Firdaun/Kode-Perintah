@@ -1,0 +1,8 @@
+// ===== Utilitas & Perintah Sistem ===== //
+
+// ===== Untuk membuat folder sekaligus ===== //
+mkdir -p src/{controllers,middleware,routes,services,sockets}
+
+// ===== Mendownload app MS Store tanpa MS Store ===== //
+perintah pertama                 : Invoke-WebRequest "URL" -OutFile "WhatsAppDesktop.appx"
+perintah kedua                   : Add-AppxPackage .\WhatsAppDesktop.appx
