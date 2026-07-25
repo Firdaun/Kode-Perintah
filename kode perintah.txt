@@ -1,0 +1,97 @@
+buat akun di git lokal : git config --local user.name "..."
+perintah cek koneksi : "ssh -T git@github.com" / -utama / -kedua
+cek ada/tidak ssh    : "ls ~/.ssh"
+Buat ssh : ssh-keygen -t ed25519 -C "fahrulmuhammad764@gmail.com" -f ~/.ssh/id_ed25519_utama
+mode config : nano ~/.ssh/config
+list config local : git config --list --local
+alias tree working : git config --global alias.graph "log --all --decorate --oneline --graph --color --pretty=format:'%C(auto)%h %d %s %C(blue)%an %C(black)%C(bold)%cr'"
+liat apakah alias sudah tersimpan : git config --global --get alias.graph
+untuk balik ke commit sebelumnya : git revert <commit-hash> -m "Revert karena bug"
+check koneksi remote github : git remote -v
+alias ssh :
+----------------------------------------
+# Akun Utama
+Host github.com-utama
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_ed25519_utama
+----------------------------------------
+
+----------------------------------------
+password ssh utama : 5394
+password ssh kedua : 4935
+----------------------------------------
+
+hapus dependency : npm uinstall...
+ngetest per it : npm test -- -t "..."
+
+----------------------------------------
+step by step untuk menginstall prisma :
+1.npm install prisma @types/node --save-dev
+2.npm install @prisma/client @prisma/adapter-mariadb dotenv   <-- untuk mysql
+2.npm install @prisma/client @prisma/adapter-pg pg dotenv     <-- untuk PostgreSQL
+3.npx prisma init --datasource-provider mysql --output ../generated/prisma
+3.npx prisma init --datasource-provider postgresql --output ../generated/prisma
+4.ubah provider di generator client jadi "prisma-client-js"
+----------------------------------------
+untuk menghubungkan prisma ke database:
+di local : npx prisma migrate dev --name init
+di production : npx prisma migrate deploy
+----------------------------------------
+untuk ngetest : npm test -- -t "..."
+
+// ===== seputar git ===== //
+balik ke commit sebelumnya : git revert
+hapus tracking file : git rm --cached path/to/file
+reset soft : git reset --soft HEAD~...
+simpan perubahan tanpa commit : git stash
+cek isi stash : git stash list
+un-stash project : git stash pop
+un-stash tapi tidak menghapus stash-nya : git stash apply
+untuk menghapus stashnya : git stash drop
+melihat isi stash : git stash show -p
+untuk rename commit sebelummnya dengan waktu tetap : git rebase -i --committer-date-is-author-date HEAD~angka
+untuk push ke github dengan perubahan rebase : git push --force-with-lease
+
+// ===== untuk mebuat folder sekaligus ===== //
+mkdir -p src/{controllers,middleware,routes,services,sockets}
+
+// ===== untuk kode unit test ===== //
+it spesifik : npm run tests tests/users/register.test.js -- -t "..."
+untuk run semua file unit test : npm run tests -- tests/ --runInBand
+
+// ===== untuk menjalankan server di mode test ===== //
+NODE_ENV=test node src/main.js
+
+// ===== untuk commit di waktu sebelumnya ===== //
+GIT_AUTHOR_DATE="2026-07-04 17:05:00 +0700" GIT_COMMITTER_DATE="2026-07-04 17:05:00 +0700" git commit -m "Daily contribution 2"
+
+// ===== seputar docker ===== //
+membuat container(forward port) : docker container create --name namabebas --publish 8080:80 redis:latest
+membuat container : docker container create --name contohredis2 redis:latest
+hapus container : docker container rm contohredis
+start container : docker container start contohredis
+stop container : docker container stop contohredis
+list semua container : docker container ls -a
+list container(hanya yg aktif) : docker container ls
+hapus keys : DEL namaKey / DEL key1 key2 key3
+menambahkan env : docker container create --name contohmongo --publish 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+mengatur resource : docker container create --name smallnginx --memory 100m --cpus 0.5 --publish 8081:80 nginx:lates
+masuk ke container : docker container exec -i -t contohredis /bin/bash
+masuk langsung ke redis-cli : docker container exec -it redis-kustom redis-cli
+masuk ke redis cli : redis-cli --> get fahrul
+bind mounts docker : docker container create --name mongodata --publish 27017:27017 --mount "type=bind,source=C:\Users\Fahrul10\Desktop\mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+ngecek volume : docker volume ls
+buat volume : docker volume create mongovolume
+hapus volume : docker volume rm mongovolume
+container volume : docker container create --name mongovolume --publish 27018:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
+//--menghapus semua--//
+container : docker container prune
+image : docker image prune
+network : docker network prune
+volume : docker volume prune
+hapus container, network, image : docker system prune
+
+//--Mendownload app ms store tanpa ms store--//
+perintah pertama : Invoke-WebRequest "URL" -OutFile "WhatsAppDesktop.appx"
+perintah kedua : Add-AppxPackage .\WhatsAppDesktop.appx
