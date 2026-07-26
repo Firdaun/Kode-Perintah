@@ -5,7 +5,7 @@ redis pipeline                   : docker container exec -i namaContainerRedis r
 
 // ===== Redis User (letakkan di file redis.conf) ===== //
 izinkan masuk dulu               : user default on +@connection
-login auth                       : user fahrul on +@all ~* >rahasia
+login auth                       : user fahrul on +@all ~* >rahasia ==> auth fahrul rahasia
 
 // ===== Redis Queue / Transaction ===== //
 tahap pertama                    : multi
