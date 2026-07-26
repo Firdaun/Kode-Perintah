@@ -10,3 +10,6 @@ run semua file (tanpa parallel)  : npm run tests -- tests/ --runInBand
 
 // ===== Menjalankan Server di Mode Test ===== //
 NODE_ENV=test node src/main.js
+
+// ===== Load Test(K6) ===== //
+k6 run tests/loadTest/load-test.js
