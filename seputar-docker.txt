@@ -10,6 +10,7 @@ list container(hanya yg aktif)   : docker container ls
 menambahkan env                  : docker container create --name contohmongo --publish 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
 mengatur resource                : docker container create --name smallnginx --memory 100m --cpus 0.5 --publish 8081:80 nginx:lates
 masuk ke container               : docker container exec -i -t contohredis /bin/bash
+masuk ke redis lengkap           : redis-cli -h [IP_ADDRESS] -p 6379
 masuk langsung ke redis-cli      : docker container exec -it redis-kustom redis-cli
 masuk ke redis cli               : redis-cli --> get fahrul
 bind mounts docker               : docker container create --name mongodata --publish 27017:27017 --mount "type=bind,source=C:\Users\Fahrul10\Desktop\mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=fahrul --env MONGO_INITDB_ROOT_PASSWORD=fahrul mongo:latest
