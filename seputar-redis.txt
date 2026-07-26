@@ -3,6 +3,10 @@
 hapus keys                       : del namaKey / del key1 key2 key3
 redis pipeline                   : docker container exec -i namaContainerRedis redis-cli -n 0 --pipe < path/ke/file/disini.txt
 
+// ===== Redis User (letakkan di file redis.conf) ===== //
+izinkan masuk dulu               : user default on +@connection
+login auth                       : user fahrul on +@all ~* >rahasia
+
 // ===== Redis Queue / Transaction ===== //
 tahap pertama                    : multi
 tahap kedua                      : set namaKeys "isiPesan"
