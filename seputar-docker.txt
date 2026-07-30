@@ -27,7 +27,8 @@ mematikan semua container        : docker stop $(docker ps -q)
 menyalakan docker                : docker compose up
 mematikan semua container        : docker compose down
 rebuild image                    : docker compose up --build
-back up volume                   : docker exec -i mariadb-server mariadb-dump -u root -p5394 dbredis > C:/Users/Fahrul10/Desktop/backup_redis.sql
+back up volume                   : docker exec -i mariadb-server mariadb-dump -u root -p5394 dbRedis > Path/to/backup_redis.sql
+restore volume                   : docker exec -i mariadb-server mariadb -u root -p5394 dbRedis < Path/to/backup_redis.sql
 
 // ===== Docker : Menghapus Semua (Prune) ===== //
 container                        : docker container prune
