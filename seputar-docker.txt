@@ -23,6 +23,9 @@ pindahkan file ke container      : docker container cp dump.rdb redis-kustom:/da
 membuat container(tanpa config)  : docker container create --publish 6379:6379 --mount "type=volume,source=brankas-redis,destination=/data" --name redis-kustom redis
 menghapus container yg menyala   : docker container rm -f redis-kustom
 membuat container(dengan config) : docker container create --name redis-kustom --publish 6379:6379 --mount "type=volume,source=brankas-redis,destination=/data" --mount "type=bind,source=C:\Users\Fahrul10\Desktop\redis-config,destination=/config" redis redis-server /config/redis.conf
+mematikan semua container        : docker stop $(docker ps -q)
+menyalakan docker                : docker compose up
+mematikan semua container        : docker compose down
 
 // ===== Docker : Menghapus Semua (Prune) ===== //
 container                        : docker container prune
