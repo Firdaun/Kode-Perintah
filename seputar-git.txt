@@ -11,7 +11,9 @@ apakah alias sudah tersimpan     : git config --global --get alias.graph
 untuk balik ke commit sebelumnya : git revert <commit-hash> -m "Revert karena bug"
 check koneksi remote github      : git remote -v
 menghilangkan peringatan         : git config --global core.safecrlf false
+memutus remote                   : git remote remove origin
 
+// ===== Alias SSH ===== //
 alias ssh                        : ⬇
 ----------------------------------------
 # Akun Utama
