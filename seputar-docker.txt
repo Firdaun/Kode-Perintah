@@ -26,6 +26,7 @@ membuat container(dengan config) : docker container create --name redis-kustom -
 mematikan semua container        : docker stop $(docker ps -q)
 menyalakan docker                : docker compose up
 mematikan semua container        : docker compose down
+rebuild image                    : docker compose up --build
 
 // ===== Docker : Menghapus Semua (Prune) ===== //
 container                        : docker container prune
