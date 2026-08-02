@@ -6,6 +6,8 @@ mkdir -p src/{controllers,middleware,routes,services,sockets}
 // ===== Mendownload app MS Store tanpa MS Store ===== //
 perintah pertama                 : Invoke-WebRequest "URL" -OutFile "C:\Users\Fahrul10\Downloads\Programs\NAMA_APLIKASI.appx"
 perintah kedua                   : Add-AppxPackage .\NAMA_APLIKASI.appx
+melihat semua aplikasi           : Get-AppxPackage -Alluser | Select Name, PackageFullName
+hapus Aplikasi lewat powershell  : Remove-AppxPackage -Package "NAMA_APLIKASI"
 
 // ===== Mengecek IP di windows ===== //
 perintah                         : ipconfig
