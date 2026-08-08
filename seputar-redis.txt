@@ -4,6 +4,7 @@ hapus keys                       : del namaKey / del key1 key2 key3
 redis pipeline                   : docker container exec -i namaContainerRedis redis-cli -n 0 --pipe < path/ke/file/disini.txt
 ngecek versi redis di docker     : docker container exec redis-kustom redis-server -v
 link template conf redis         : https://github.com/redis/redis/blob/8.8/redis.conf
+delete all data redis di docker  : docker exec -it redis_ecommerce_app redis-cli FLUSHALL
 
 // ===== Redis User (letakkan di file redis.conf) ===== //
 izinkan masuk dulu               : user default on +@connection
