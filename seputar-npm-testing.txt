@@ -7,10 +7,11 @@ untuk ngetest                    : npm test -- -t "..."
 // ===== Kode Unit Test ===== //
 it spesifik                      : npm run tests tests/users/register.test.js -- -t "..."
 run semua file (tanpa parallel)  : npm run tests -- tests/ --runInBand
+bersih2                          : node tests/loadTest/cleanup.js
 
 // ===== Menjalankan Server di Mode Test ===== //
 NODE_ENV=test node src/main.js
 
 // ===== Load Test(K6) ===== //
 url hardcoded                    : k6 run tests/loadTest/load-test.js
-url via perintah                 : k6 run -e LOADTEST_URL=http://192.168.1.7:8000/api tests/loadTest/load-test.js
+url via perintah                 : k6 run -e LOADTEST_URL=http://192.168.1.4:8000/api tests/loadTest/load-test.js

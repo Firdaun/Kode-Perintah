@@ -5,6 +5,7 @@ redis pipeline                   : docker container exec -i namaContainerRedis r
 ngecek versi redis di docker     : docker container exec redis-kustom redis-server -v
 link template conf redis         : https://github.com/redis/redis/blob/8.8/redis.conf
 delete all data redis di docker  : docker exec -it redis_ecommerce_app redis-cli FLUSHALL
+mengecek jumlah all data redis   : docker exec -it redis_ecommerce_app redis-cli zcard active_users
 
 // ===== Redis User (letakkan di file redis.conf) ===== //
 izinkan masuk dulu               : user default on +@connection
