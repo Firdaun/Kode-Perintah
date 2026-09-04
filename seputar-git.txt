@@ -12,6 +12,7 @@ untuk balik ke commit sebelumnya : git revert <commit-hash> -m "Revert karena bu
 check koneksi remote github      : git remote -v
 menghilangkan peringatan         : git config --global core.safecrlf false
 memutus remote                   : git remote remove origin
+untuk liat commit sebelumnya     : git switch --detach <commit-hash>
 
 // ===== Alias SSH ===== //
 alias ssh                        : ⬇
