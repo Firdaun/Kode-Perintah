@@ -46,3 +46,6 @@ GIT_AUTHOR_DATE="2026-08-02 15:00:00 +0700" GIT_COMMITTER_DATE="2026-08-02 15:00
 
 // ===== melihat isi file berdasarkan kode commit ===== //
 git show ca16545b7f833b2e4119f84375cb1ad7795db69f:nama-file
+
+// ===== memindahkan isi file dari commit dahulu ke file baru di commit sekarang ===== //
+git show 8859c4e:dataGift.json > temp.json
