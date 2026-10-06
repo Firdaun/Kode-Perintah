@@ -13,6 +13,7 @@ check koneksi remote github      : git remote -v
 menghilangkan peringatan         : git config --global core.safecrlf false
 memutus remote                   : git remote remove origin
 untuk liat commit sebelumnya     : git switch --detach <commit-hash>
+isi file commit sebelumnya       : git show HEAD~1:dataGift.json
 
 // ===== Alias SSH ===== //
 alias ssh                        : ⬇
@@ -42,3 +43,6 @@ push dengan perubahan rebase     : git push --force-with-lease
 
 // ===== Commit di waktu sebelumnya ===== //
 GIT_AUTHOR_DATE="2026-08-02 15:00:00 +0700" GIT_COMMITTER_DATE="2026-08-02 15:00:00 +0700" git commit -am "pesan"
+
+// ===== melihat isi file berdasarkan kode commit ===== //
+git show ca16545b7f833b2e4119f84375cb1ad7795db69f:nama-file
